@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "06389BB9-6A0F-49E2-9A2D-9E3D6D76CF17"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90B446DB-6485-40CF-8B86-D0013C6B3558"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMediaPlayer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "MoviesListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "90B446DB-6485-40CF-8B86-D0013C6B3558 - 62346609d0352b62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMediaPlayer.ViewController.apiURLString.getter : Swift.String"
+                  moduleName = "SocialMediaPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iphtech29/Desktop/SocialMediaPlayer/SocialMediaPlayer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "90B446DB-6485-40CF-8B86-D0013C6B3558 - 4f22a713e8a0c671"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMediaPlayer.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SocialMediaPlayer.ViewController"
+                  moduleName = "SocialMediaPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iphtech29/Desktop/SocialMediaPlayer/SocialMediaPlayer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  uuid = "90B446DB-6485-40CF-8B86-D0013C6B3558 - 180d35d5fa44bd8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMediaPlayer.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SocialMediaPlayer.ViewController&gt;"
+                  moduleName = "SocialMediaPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iphtech29/Desktop/SocialMediaPlayer/SocialMediaPlayer/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "143">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
