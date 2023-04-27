@@ -20,7 +20,6 @@ class MoviesListViewController: UIViewController{
         favouriteButton.setImage(UIImage(named: "favourite.png"), for: .normal)
         favouriteButton.layer.cornerRadius = 8
         getdataFromApi()
-        favouriteArray = [Bool](repeating: false, count: 100)
         configureCustomRatingArray()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshFavouritesArray(notification:)), name: Notification.Name("didTapAddFavouriteNotification"), object: nil)
     }
@@ -34,7 +33,6 @@ class MoviesListViewController: UIViewController{
     
     //MARK: Define All varibales
     var MoviesListArray = [MoviesList]()
-    var favouriteArray = [Bool]()
     var customRatingArray = [MovieDetails]()
     var valuesImageURL:String = ""
   
@@ -64,7 +62,7 @@ class MoviesListViewController: UIViewController{
                         
                         DispatchQueue.main.async { [self] in
                             valuesImageURL = "https://image.tmdb.org/t/p/w500/\(imagePath)"
-                            MoviesListArray.append(MoviesList(titleName: indexDatatitleNameDict, MoviesImageId: valuesImageURL, MoviesRating: voteAverageCountRating))
+                            MoviesListArray.append(MoviesList(titleName: indexDatatitleNameDict, MoviesImageId: valuesImageURL, MoviesRating: voteAverageCountRating, favouriteArray: false))
                         }
                         
                         DispatchQueue.main.async {
@@ -103,7 +101,7 @@ class MoviesListViewController: UIViewController{
         if let title = notification.userInfo?["title"] as? String {
             for (index, item) in MoviesListArray.enumerated() {
                 if item.titleName == title {
-                    favouriteArray[index] = true
+                    MoviesListArray[index].favouriteArray = true
                     }
                 }
             }
@@ -130,8 +128,8 @@ extension MoviesListViewController: UICollectionViewDelegateFlowLayout, UICollec
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         cell.titlesPosterUIImageView.contentMode = .scaleAspectFill
     
-        if favouriteArray.count > 0{
-            if favouriteArray[indexPath.row]{
+        if MoviesListArray.count > 0{
+            if MoviesListArray[indexPath.row].favouriteArray {
                 cell.heartButton.setImage(UIImage(named: "filled.png"), for: .normal)
             }
             else {

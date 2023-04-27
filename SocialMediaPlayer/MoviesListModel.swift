@@ -11,5 +11,6 @@ struct MoviesList {
     var titleName: String
     var MoviesImageId: String
     var MoviesRating: Double
+    var favouriteArray: Bool
     }
 
