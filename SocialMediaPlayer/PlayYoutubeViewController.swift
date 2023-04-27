@@ -98,9 +98,3 @@ class PlayYoutubeViewController: UIViewController, YTPlayerViewDelegate {
         playerView.playVideo()
     }
 }
-
-extension  String {
-    func addpercent() -> String{
-        return self.replacingOccurrences(of: " ", with: "%20")
-    }
-}

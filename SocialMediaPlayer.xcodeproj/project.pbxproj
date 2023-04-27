@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0747984929FA392900B3300A /* AddPercent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747984829FA392900B3300A /* AddPercent.swift */; };
 		074CF8A929DFE60000D2BFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CF8A829DFE60000D2BFB6 /* AppDelegate.swift */; };
 		074CF8AB29DFE60000D2BFB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CF8AA29DFE60000D2BFB6 /* SceneDelegate.swift */; };
 		074CF8AD29DFE60000D2BFB6 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CF8AC29DFE60000D2BFB6 /* MoviesListViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0683D5823671EC2BC81938A8 /* Pods_SocialMediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0747984829FA392900B3300A /* AddPercent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPercent.swift; sourceTree = "<group>"; };
 		074CF8A529DFE60000D2BFB6 /* SocialMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		074CF8A829DFE60000D2BFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		074CF8AA29DFE60000D2BFB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				076157CE29E90B5900AA0D0D /* DisplayVideosAPIModel.swift */,
+				0747984829FA392900B3300A /* AddPercent.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				075D8DA929ED16BF001D4CA0 /* GivenRatingViewController.swift in Sources */,
 				074CF8A929DFE60000D2BFB6 /* AppDelegate.swift in Sources */,
 				07D7F70129EFAB3500A3A640 /* FavouriteViewController.swift in Sources */,
+				0747984929FA392900B3300A /* AddPercent.swift in Sources */,
 				076157CF29E90B5900AA0D0D /* DisplayVideosAPIModel.swift in Sources */,
 				074CF8BE29DFE70300D2BFB6 /* MyCollectionViewCell.swift in Sources */,
 				079F9C5029EE7FBA00D8ECB9 /* UserDefaultsManager.swift in Sources */,
