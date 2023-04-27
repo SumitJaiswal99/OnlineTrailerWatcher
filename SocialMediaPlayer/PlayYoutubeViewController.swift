@@ -53,7 +53,6 @@ class PlayYoutubeViewController: UIViewController, YTPlayerViewDelegate {
         
         let titleDict:[String: String] = ["title": titleName]
         NotificationCenter.default.post(name: Notification.Name("didTapAddFavouriteNotification"), object: nil, userInfo: titleDict)
-        
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

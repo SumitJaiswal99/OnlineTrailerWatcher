@@ -53,8 +53,13 @@ extension FavouriteViewController:UICollectionViewDelegate, UICollectionViewData
         let otherPlayer = YTPlayerView()
         view.addSubview(otherPlayer)
         cell.favouriteMoviesView.delegate = self
-       cell.favouriteMoviesView.load(withVideoId: "\(ArrayVideosId[indexPath.row])",playerVars: ["playsinline": 1])
-        cell.MoviestitleLabel.text = Arraytitle[indexPath.row]
+        if Arraytitle[indexPath.row] != "" {
+            cell.favouriteMoviesView.load(withVideoId: "\(ArrayVideosId[indexPath.row])",playerVars: ["playsinline": 1])
+            cell.MoviestitleLabel.text = Arraytitle[indexPath.row]
+        } else {
+            cell.MoviestitleLabel.isHidden
+            
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

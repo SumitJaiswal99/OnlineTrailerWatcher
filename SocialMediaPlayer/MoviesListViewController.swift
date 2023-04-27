@@ -9,7 +9,7 @@ import UIKit
 import Cosmos
 
 class MoviesListViewController: UIViewController{
-    
+
     //MARK: Define IBOutlets
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var favouriteButton: UIButton!
@@ -35,14 +35,11 @@ class MoviesListViewController: UIViewController{
     }
     
     //MARK: Define All varibales
-    var arraytitle = [String]()
+    var MoviesListArray = [MoviesList]()
     var favouriteArray = [Bool]()
-    var arrayRating = [Double]()
-    var imageArray = [String]()
     var customRatingArray = [MovieDetails]()
     var valuesImageURL:String = ""
     
-  
     func getdataFromApi() {
         guard let url = URL(string: apiURLString) else {
             print(" failed to get URL!")
@@ -61,28 +58,22 @@ class MoviesListViewController: UIViewController{
                     let dataArray = dataDict.value(forKey: "results") as! NSArray
                     for (index, value) in dataArray.enumerated() {
                         let valueData = value as! NSDictionary
-                        for i in 0...20 {
+                        for i in 0...30 {
                             if index == i {
-                                let indexDataDict = valueData.value(forKey: "title") as! String
+                                let indexDatatitleNameDict = valueData.value(forKey: "title") as! String
                                 let imagePath = valueData.value(forKey: "backdrop_path") as! String
                                 let voteAverageCountRating = valueData.value(forKey: "vote_average") as! Double
-                                print(voteAverageCountRating)
-                        
+    
                                 DispatchQueue.main.async { [self] in
-                                    arraytitle.append(indexDataDict)
-                                    print(arraytitle[i])
-                                    arrayRating.append(voteAverageCountRating)
-                                    print(arrayRating[i])
                                     valuesImageURL = "https://image.tmdb.org/t/p/w500/\(imagePath)"
-                                    imageArray.append(valuesImageURL)
-                                    print(imageArray[i])
+                                    MoviesListArray.append(MoviesList(titleName: indexDatatitleNameDict, MoviesImageId: valuesImageURL, MoviesRating: voteAverageCountRating))
                                 }
                                 
                                 DispatchQueue.main.async {
                                     self.myCollectionView.reloadData()
                                 }
                                
-                                print("indexDataDict =\(indexDataDict)")
+                                print("indexDatatitleNameDict =\(indexDatatitleNameDict)")
                             }
                         }
                     }
@@ -116,8 +107,8 @@ class MoviesListViewController: UIViewController{
     
     @objc func refreshFavouritesArray(notification: Notification){
         if let title = notification.userInfo?["title"] as? String {
-            for (index, item) in arraytitle.enumerated() {
-                if item == title {
+            for (index, item) in MoviesListArray.enumerated() {
+                if item.titleName == title {
                     favouriteArray[index] = true
                     }
                 }
@@ -160,16 +151,14 @@ extension MoviesListViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
         }
         
-        if arraytitle.count > 0 && indexPath.row < arraytitle.count {
-            
-            cell.titleLabel.text = arraytitle[indexPath.row]
-            let correctValue = arrayRating[indexPath.row]
-            
-            let apiURLStrings = "\(imageArray[indexPath.row])"
+        if MoviesListArray.count > 0 && indexPath.row < MoviesListArray.count {
+            cell.titleLabel.text = MoviesListArray[indexPath.row].titleName
+            let correctValue = MoviesListArray[indexPath.row].MoviesRating
+            let apiURLStrings = "\(MoviesListArray[indexPath.row].MoviesImageId)"
             print(apiURLStrings)
             cell.titlesPosterUIImageView.downloaded(from: apiURLStrings)
             //show custom rating
-            let titleValue = arraytitle[indexPath.row]
+               let titleValue = MoviesListArray[indexPath.row].titleName
             let ratingArray = customRatingArray.filter({
                 $0.title == titleValue
             })
@@ -191,9 +180,8 @@ extension MoviesListViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainS = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainS.instantiateViewController(withIdentifier: "PlayYoutubeViewController") as? PlayYoutubeViewController
-        vc?.titleName = arraytitle[indexPath.row]
-        vc?.videosIdImage = imageArray[indexPath.row]
-        
+        vc?.titleName = MoviesListArray[indexPath.row].titleName
+        vc?.videosIdImage = MoviesListArray[indexPath.row].MoviesImageId
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
