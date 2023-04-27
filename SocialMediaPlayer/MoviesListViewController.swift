@@ -14,70 +14,34 @@ class MoviesListViewController: UIViewController{
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var favouriteButton: UIButton!
     
+    //MARK: Define varibale
+    var customRatingArray = [MovieDetails]()
+    var MoviesListArray = [MoviesList]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         favouriteButton.setImage(UIImage(named: "favourite.png"), for: .normal)
         favouriteButton.layer.cornerRadius = 8
-        getdataFromApi()
+   
         configureCustomRatingArray()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshFavouritesArray(notification:)), name: Notification.Name("didTapAddFavouriteNotification"), object: nil)
+        myCollectionView.dataSource = self
+        myCollectionView.delegate = self
+        getdataFromApi { result in
+            switch result{
+            case .success(let movieData):
+                self.MoviesListArray = movieData
+                DispatchQueue.main.async {
+                    self.myCollectionView.reloadData()
+                }
+            case .failure(let error):
+                print("Error Found")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.async {
-            self.myCollectionView.reloadData()
-        }
-    }
-    
-    //MARK: Define All varibales
-    var MoviesListArray = [MoviesList]()
-    var customRatingArray = [MovieDetails]()
-    var valuesImageURL:String = ""
-  
-    
-    func getdataFromApi() {
-        guard let url = URL(string: apiURLString) else {
-            print(" failed to get URL!")
-            return
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        URLSession.shared.dataTask(with: request) { [self] data, response, error in
-            if error == nil, let responseData = data {
-                do {
-                    let jsonObject = try JSONSerialization.jsonObject(with: responseData)
-                    print("\(jsonObject)")
-                    let dataDict = jsonObject as! NSDictionary
-                    let countValue = dataDict.value(forKey: "page") as! Int
-                    print("page =\(countValue)")
-                    let dataArray = dataDict.value(forKey: "results") as! NSArray
-                    for (_, value) in dataArray.enumerated() {
-                        let valueData = value as! NSDictionary
-                        
-                        let indexDatatitleNameDict = valueData.value(forKey: "title") as! String
-                        let imagePath = valueData.value(forKey: "backdrop_path") as! String
-                        let voteAverageCountRating = valueData.value(forKey: "vote_average") as! Double
-                        
-                        DispatchQueue.main.async { [self] in
-                            valuesImageURL = "https://image.tmdb.org/t/p/w500/\(imagePath)"
-                            MoviesListArray.append(MoviesList(titleName: indexDatatitleNameDict, MoviesImageId: valuesImageURL, MoviesRating: voteAverageCountRating, favouriteArray: false))
-                        }
-                        
-                        DispatchQueue.main.async {
-                            self.myCollectionView.reloadData()
-                        }
-                    }
-                }
-                catch let error {
-                    print(error.localizedDescription)
-                }
-            }
-            else{
-                print("No data found")
-            }
-        }.resume()
     }
     
     //MARK:Jump to favourite view controller
