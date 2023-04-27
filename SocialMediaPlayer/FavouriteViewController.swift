@@ -40,8 +40,6 @@ class FavouriteViewController: UIViewController, YTPlayerViewDelegate {
             UserDefaults.standard.set(ArrayVideosId, forKey: "videosId")
             
         }
-        print("value=====",Arraytitle)
-        print("value=====",ArrayVideosId)
     }
 }
 
