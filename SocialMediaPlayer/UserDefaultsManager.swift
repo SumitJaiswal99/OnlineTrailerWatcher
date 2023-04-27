@@ -7,8 +7,6 @@
 
 import Foundation
 
-var HeartButtonIcon = false
-
 struct MovieDetails: Codable {
     var movieId: String
     var rating: Double
