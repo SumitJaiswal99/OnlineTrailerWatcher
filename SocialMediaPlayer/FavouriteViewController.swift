@@ -25,10 +25,10 @@ class FavouriteViewController: UIViewController, YTPlayerViewDelegate {
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        apppendvalue()
+        apppendVideosIdAndTitleName()
     }
     
-    func apppendvalue() {
+    func apppendVideosIdAndTitleName() {
         
         Arraytitle = UserDefaults.standard.array(forKey: "titleName") as? [String] ?? []
         ArrayVideosId = UserDefaults.standard.array(forKey: "videosId") as? [String] ?? []
