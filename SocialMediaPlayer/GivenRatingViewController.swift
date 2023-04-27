@@ -57,8 +57,6 @@ class GivenRatingViewController: UIViewController {
     @IBAction func giveRatingAction(_ sender: UISlider) {
         countRating.rating = Double(sender.value)
         countRatingKeyValues = "\(Double(round(10 * countRating.rating) / 10))"
-        print(countRatingKeyValues)
-        print(countRating)
     }
 }
 
