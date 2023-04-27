@@ -78,9 +78,6 @@ class PlayYoutubeViewController: UIViewController, YTPlayerViewDelegate {
                         self.playerView.load(withVideoId: "\(jsonData.items[0].id.videoID)",playerVars: ["playsinline": 1])
                         
                     }
-                    
-                    print("https://www.youtube.com/watch?v=\(jsonData.items[0].id.videoID)")
-                    
                 }
                 catch let error {
                     print(error.localizedDescription)

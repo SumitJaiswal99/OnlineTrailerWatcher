@@ -14,8 +14,6 @@ class MoviesListViewController: UIViewController{
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var favouriteButton: UIButton!
     
-    let apiURLString = "https://api.themoviedb.org/3/trending/movie/day?api_key=877a86d2d8c4aac067a20c85737a59a5"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +37,7 @@ class MoviesListViewController: UIViewController{
     var favouriteArray = [Bool]()
     var customRatingArray = [MovieDetails]()
     var valuesImageURL:String = ""
+  
     
     func getdataFromApi() {
         guard let url = URL(string: apiURLString) else {
