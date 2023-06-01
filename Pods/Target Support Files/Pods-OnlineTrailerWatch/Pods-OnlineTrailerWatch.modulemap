@@ -1,0 +1,6 @@
+framework module Pods_OnlineTrailerWatch {
+  umbrella header "Pods-OnlineTrailerWatch-umbrella.h"
+
+  export *
+  module * { export * }
+}

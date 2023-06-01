@@ -1,8 +1,8 @@
 PODS:
   - Cosmos (23.0.0)
-  - SDWebImage (5.15.5):
-    - SDWebImage/Core (= 5.15.5)
-  - SDWebImage/Core (5.15.5)
+  - SDWebImage (5.15.8):
+    - SDWebImage/Core (= 5.15.8)
+  - SDWebImage/Core (5.15.8)
   - SwiftyJSON (5.0.1)
   - youtube-ios-player-helper (1.0.4)
 
@@ -21,10 +21,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
-  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: b42533cc00521b35df709efd0066394c90ba56a3
+PODFILE CHECKSUM: a6a6d4431f413ee30f91902d6857441e98aa0063
 
 COCOAPODS: 1.12.0
