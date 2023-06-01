@@ -56,6 +56,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073AC2322A287CC500A8666A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07A196A829E3E9AF00E22C72 /* PlayYoutubeViewController.swift */,
+				075D8DA829ED16BF001D4CA0 /* GivenRatingViewController.swift */,
+				07D7F70029EFAB3500A3A640 /* FavouriteViewController.swift */,
+				074CF8AC29DFE60000D2BFB6 /* MoviesListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		073AC2332A287D0100A8666A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				074CF8A829DFE60000D2BFB6 /* AppDelegate.swift */,
+				074CF8AA29DFE60000D2BFB6 /* SceneDelegate.swift */,
+				073AC2342A287D1100A8666A /* DataManager */,
+				076157CD29E90B2800AA0D0D /* API */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		073AC2342A287D1100A8666A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				079F9C4F29EE7FBA00D8ECB9 /* UserDefaultsManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		074CF89C29DFE60000D2BFB6 = {
 			isa = PBXGroup;
 			children = (
@@ -77,19 +107,13 @@
 		074CF8A729DFE60000D2BFB6 /* SocialMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				076157CD29E90B2800AA0D0D /* API */,
+				073AC2332A287D0100A8666A /* Model */,
+				073AC2322A287CC500A8666A /* Controller */,
 				074CF8BC29DFE6D200D2BFB6 /* View */,
-				074CF8A829DFE60000D2BFB6 /* AppDelegate.swift */,
-				074CF8AA29DFE60000D2BFB6 /* SceneDelegate.swift */,
-				074CF8AC29DFE60000D2BFB6 /* MoviesListViewController.swift */,
 				074CF8AE29DFE60000D2BFB6 /* Main.storyboard */,
 				074CF8B129DFE60300D2BFB6 /* Assets.xcassets */,
 				074CF8B329DFE60300D2BFB6 /* LaunchScreen.storyboard */,
 				074CF8B629DFE60300D2BFB6 /* Info.plist */,
-				07A196A829E3E9AF00E22C72 /* PlayYoutubeViewController.swift */,
-				075D8DA829ED16BF001D4CA0 /* GivenRatingViewController.swift */,
-				079F9C4F29EE7FBA00D8ECB9 /* UserDefaultsManager.swift */,
-				07D7F70029EFAB3500A3A640 /* FavouriteViewController.swift */,
 			);
 			path = SocialMediaPlayer;
 			sourceTree = "<group>";
@@ -398,15 +422,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialMediaPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,15 +452,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialMediaPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
